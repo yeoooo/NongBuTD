@@ -6,6 +6,7 @@ public class Bullets : MonoBehaviour
 {
     public float speed;
     public float atk;
+
     public Tower tower;
     public Enemy target;
     public Vector3 lastPos;
