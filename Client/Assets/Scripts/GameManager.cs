@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameScene;
 
-    public void GoInGame()
+    public void Pause()
     {
-        gameScene.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
     }
 }

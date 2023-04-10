@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public float atkrange;
+    public float atkRange;
     public float atk;
-    public float atkspeed;
+    public float atkSpeed;
     public int cost;
     public bool shotDelay;
 
@@ -24,7 +24,7 @@ public class Tower : MonoBehaviour
 
     void EnemyScan()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, atkrange, Vector2.zero, 0, LayerMask.GetMask("Enemy"));
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, atkRange, Vector2.zero, 0, LayerMask.GetMask("Enemy"));
 
         if (hits.Length < 1)
             return;
@@ -47,13 +47,13 @@ public class Tower : MonoBehaviour
         Shot(target);
         shotDelay = true;
 
-        yield return new WaitForSeconds(atkspeed);
+        yield return new WaitForSeconds(atkSpeed);
         shotDelay = false;
 
         Vector3 targetPos = target.transform.position;
         float distance = Vector3.Distance(transform.position, targetPos);
 
-        if (distance > atkrange)
+        if (distance > atkRange)
         {
             target = null;
             yield break;
@@ -71,6 +71,6 @@ public class Tower : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, atkrange);
+        Gizmos.DrawWireSphere(transform.position, atkRange);
     }
 }

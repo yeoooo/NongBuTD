@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        speed = 0.05f;
+
     }
 
     void Update()

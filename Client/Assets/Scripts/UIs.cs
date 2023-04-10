@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class UIs : MonoBehaviour
 {
-    public void CloseUI()
-    {
-        gameObject.SetActive(false);
-    }
+    public GameManager manager;
 
     public void OpenUI(GameObject opens)
     {
         opens.SetActive(true);
     }
 
+    public void CloseUI(GameObject go)
+    {
+        go.SetActive(false);
+    }
+
+    public void Pause()
+    {
+        manager.Pause();
+    }
+
+    public void Resume()
+    {
+        manager.Resume();
+    }
 }
