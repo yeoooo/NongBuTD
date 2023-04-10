@@ -3,4 +3,5 @@ public class Tower{
     private long attack_pt;
     private long attack_range;
     private long price;
+    private int level;
 }
