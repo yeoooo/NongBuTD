@@ -17,6 +17,7 @@ import java.util.UUID;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "user_id")
     private UUID id;
     private String nickName;
     private String pw;
@@ -29,11 +30,11 @@ public class User {
     아이템은 항상 열려있으나 비활성화 상태. 따라서 id만 넣고 활성화해주는
     편으로 나아가는 것이 적합
      */
-//    @OneToMany(mappedBy = "farmers")
+//    @OneToMany(mappedBy = "User")
 //    private List<Farmer> farmers;
-//    @OneToMany(mappedBy = "Quest")
+//    @OneToMany(mappedBy = "User")
 //    private List<Quest> quest;
-//    @OneToMany(mappedBy = "Item")
+//    @OneToMany(mappedBy = "User")
 //    private List<Item> items;
 
 }
