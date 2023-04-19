@@ -1,11 +1,17 @@
 package com.td.NongbuTD.domain;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.ToString;
 
+@Entity
 @ToString
 public class GameLog {
+    @Id
+    @GeneratedValue
     private Long id;
     /**
      * 챕터 정보
@@ -17,7 +23,7 @@ public class GameLog {
     private Boolean is_clear;
 
     @ManyToOne
-    private Long user;
+    private User user;
 
 
 }
