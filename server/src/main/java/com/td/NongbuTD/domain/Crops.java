@@ -3,8 +3,10 @@ package com.td.NongbuTD.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.ToString;
 
 @Entity
+@ToString
 public class Crops {
     @GeneratedValue
     @Id

@@ -1,9 +1,11 @@
 package com.td.NongbuTD.domain;
 
 import jakarta.persistence.*;
+import lombok.ToString;
 
 @Entity
 @Table(name = "farmers")
+@ToString
 public class Farmer {
     @Id
     @GeneratedValue
@@ -12,16 +14,4 @@ public class Farmer {
 
     private String name;
     private Long price;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

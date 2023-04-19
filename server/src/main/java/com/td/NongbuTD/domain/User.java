@@ -1,10 +1,7 @@
 package com.td.NongbuTD.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,6 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Getter
+@ToString
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -27,14 +25,14 @@ public class User {
     private Long seed;
     /*
 
-    아이템은 항상 열려있으나 비활성화 상태. 따라서 id만 넣고 활성화해주는
+    아이템은, 퀘스트, 농부 캐릭터는 항상 열려있으나 비활성화 상태. 따라서 id만 넣고 활성화해주는
     편으로 나아가는 것이 적합
      */
-//    @OneToMany(mappedBy = "User")
-//    private List<Farmer> farmers;
-//    @OneToMany(mappedBy = "User")
-//    private List<Quest> quest;
-//    @OneToMany(mappedBy = "User")
-//    private List<Item> items;
+    @OneToMany(mappedBy = "user")
+    private List<UserFarmer> farmers;
+    @OneToMany(mappedBy = "user")
+    private List<UserQuest> quest;
+    @OneToMany(mappedBy = "user")
+    private List<UserItem> items;
 
 }

@@ -22,6 +22,6 @@ public class Skill {
     private SkillCategory category;
     private Long coolTime;
     private Long price;
-    private long[] upgrade_cost;
+    private Long[] upgrade_cost;
 
 }
