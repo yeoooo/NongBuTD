@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/farmerDB
+    username: farmer
+    password: 1234
+
+  jpa:
+    database-platform:
+    hibernate:
+      ddl-auto: update
