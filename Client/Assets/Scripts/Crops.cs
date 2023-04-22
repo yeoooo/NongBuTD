@@ -6,6 +6,7 @@ public class Crops : MonoBehaviour
 {
     public int cost;
     public float earningTime;
+    public int income;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Crops : MonoBehaviour
             yield return new WaitForSeconds(earningTime);
 
             // ƒ⁄¿Œ»πµÊ
+            Managers.Game.coin += income;
         }
     }
 }

@@ -10,20 +10,25 @@ public class Tower : MonoBehaviour
     public float atk;
     public float atkSpeed;
     public int cost;
+    public int sellCost;
+    public int level;
     public bool shotDelay;
 
     public Enemy target;
     public GameObject bullet;
+    public GameObject towerOptions;
 
     void Update()
     {
-
         if (target == null)
             EnemyScan();
     }
 
     void EnemyScan()
     {
+        if (level == 0)
+            return;
+
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, atkRange, Vector2.zero, 0, LayerMask.GetMask("Enemy"));
 
         if (hits.Length < 1)

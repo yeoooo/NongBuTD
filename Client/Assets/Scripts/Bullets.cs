@@ -34,7 +34,13 @@ public class Bullets : MonoBehaviour
 
     void Move()
     {
-        transform.position += (lastPos - transform.position).normalized * speed * Time.deltaTime;
+
+
+        if (Vector3.Distance(transform.position, lastPos) > speed * Time.deltaTime)
+            transform.position += (lastPos - transform.position).normalized * speed * Time.deltaTime;
+        else
+            transform.position = lastPos;
+        
 
         if (Vector3.Distance(transform.position, lastPos) <= 0.05f)
         {
