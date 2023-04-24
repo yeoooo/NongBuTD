@@ -1,6 +1,6 @@
 package com.td.NongbuTD.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.UUID;
 @ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private UUID id;
     private String nickName;

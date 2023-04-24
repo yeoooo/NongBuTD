@@ -1,6 +1,6 @@
 package com.td.NongbuTD.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 /**
