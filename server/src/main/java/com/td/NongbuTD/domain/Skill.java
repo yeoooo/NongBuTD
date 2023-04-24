@@ -1,9 +1,6 @@
 package com.td.NongbuTD.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -16,12 +13,12 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Skill {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
     private SkillCategory category;
     private Long coolTime;
     private Long price;
-    private long[] upgrade_cost;
+
 
 }

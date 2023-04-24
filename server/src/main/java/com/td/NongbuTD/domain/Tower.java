@@ -1,6 +1,6 @@
 package com.td.NongbuTD.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Tower {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
     private Long atk_power;
@@ -22,5 +22,6 @@ public class Tower {
     private Long price;
     private Long sell_price;
     private String type;
+//    private long[] upgrade_cost;
 
 }
