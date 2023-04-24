@@ -17,6 +17,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private UUID id;
+    private String name;
     private String nickName;
     private String pw;
     private Long lastGame;
