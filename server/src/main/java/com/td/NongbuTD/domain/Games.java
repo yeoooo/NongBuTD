@@ -1,10 +1,13 @@
 package com.td.NongbuTD.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Games {
     @Id
     @GeneratedValue
@@ -12,4 +15,5 @@ public class Games {
 
     private int round;
     private long compensation;
+
 }

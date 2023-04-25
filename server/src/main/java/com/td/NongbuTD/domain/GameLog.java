@@ -2,30 +2,35 @@ package com.td.NongbuTD.domain;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.UUID;
 
 @Entity
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class GameLog {
     @Id
     @GeneratedValue
+    @Column(name = "log_id")
     private Long id;
     /**
      * 챕터 정보
      */
-    private Long game_id;
+
+    private long game_id;
+
     /**
      * 클리어 여부
      */
     private Boolean is_clear;
 
-    @ManyToOne
-    private User user;
+    private UUID user_id;
 
 
 }

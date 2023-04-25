@@ -5,9 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Entity
 @ToString
-public class UserQuest {
+public class UserQuest implements Serializable {
+
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
