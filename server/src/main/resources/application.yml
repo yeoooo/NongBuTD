@@ -10,5 +10,12 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: on
+      ddl-auto: create
+    show-sql: true
+    generate-ddl: true
+  security:
+    user:
+      name: 4e08ab27-bdf1-4d2f-a840-5c27db984d45
+      password: 1234
+
+
