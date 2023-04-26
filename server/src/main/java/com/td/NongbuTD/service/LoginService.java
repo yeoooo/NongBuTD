@@ -18,15 +18,9 @@ public class LoginService {
 
     private final UserRepository userRepository;
 
-    public Optional<User> login(UUID id, String pw) throws NoSuchData {
+    public Optional<User> login(UUID id, String pw){
         Optional<User> unAuthorized = userRepository.findById(id);
-        if (unAuthorized.isEmpty()){
-            throw new NoSuchData("UserData");
-        }
-        if (pw.equals(unAuthorized)) {
-            return unAuthorized;
-        }
-        return Optional.of(null);
+        return unAuthorized;
     }
 
 

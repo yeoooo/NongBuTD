@@ -5,6 +5,7 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
+
 @Entity
 @ToString
 public class UserFarmer implements Serializable {
