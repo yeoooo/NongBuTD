@@ -3,12 +3,9 @@ package com.td.NongbuTD.service;
 import com.td.NongbuTD.domain.User;
 import com.td.NongbuTD.domain.dto.UserDto;
 import com.td.NongbuTD.repository.UserRepository;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,10 +27,21 @@ public class UserService {
 
     public UserDto register(UserDto dto) {
         User entity = modelMapper.map(dto, User.class);
+//        TypeMap<UserDto, User> userDtoToUserMap = modelMapper.createTypeMap(UserDto.class, User.class);
+//        userDtoToUserMap.addMappings(mapper -> mapper.map(UserDto::getFarmers, User::setFarmers));
         userRepository.save(entity);
 
         return dto;
     }
+
+    public UUID update(UUID id, UserDto dto) {
+        Optional<User> user = userRepository.findById(id);
+        dto.setId(id);
+        userRepository.save(modelMapper.map(dto, User.class));
+        return id;
+    }
+
+
 
 
 }

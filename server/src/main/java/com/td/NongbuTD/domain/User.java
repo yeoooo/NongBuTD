@@ -26,9 +26,12 @@ public class User {
     private Long seed;
 
     @OneToMany(mappedBy = "user")
+    @Setter
     private List<UserFarmer> farmers;
+    @Setter
     @OneToMany(mappedBy = "user")
     private List<UserQuest> quest;
+    @Setter
     @OneToMany(mappedBy = "user")
     private List<UserItem> items;
 
