@@ -13,9 +13,16 @@ spring:
       ddl-auto: create
     show-sql: true
     generate-ddl: true
+    defer-datasource-initialization: true
+
   security:
     user:
       name: 4e08ab27-bdf1-4d2f-a840-5c27db984d45
       password: 1234
+
+  sql:
+    init:
+      mode: always
+
 
 
