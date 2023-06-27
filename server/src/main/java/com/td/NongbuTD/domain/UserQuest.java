@@ -9,14 +9,15 @@ import java.io.Serializable;
 
 @Entity
 @ToString
-public class UserQuest implements Serializable {
-
+public class UserQuest{
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Quest quest;

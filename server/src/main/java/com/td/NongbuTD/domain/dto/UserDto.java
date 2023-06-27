@@ -1,22 +1,19 @@
 package com.td.NongbuTD.domain.dto;
 
+import com.td.NongbuTD.domain.Tower;
 import com.td.NongbuTD.domain.UserFarmer;
 import com.td.NongbuTD.domain.UserItem;
 import com.td.NongbuTD.domain.UserQuest;
 import lombok.*;
 
-import javax.persistence.OneToMany;
-import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @ToString
-public class UserDto implements Serializable
+public class UserDto
 {
     private UUID id;
     private String name;
@@ -30,4 +27,5 @@ public class UserDto implements Serializable
     private List<UserFarmer> farmers;
     private List<UserQuest> quest;
     private List<UserItem> items;
+    private List<Tower> towers;
 }
